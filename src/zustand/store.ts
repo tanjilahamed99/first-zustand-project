@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
-const useStore = create((set) => ({
+const useStore = (set: any) => ({
   users: [],
   addUser: (user: any) => {
     set((state: any) => ({
@@ -14,7 +14,7 @@ const useStore = create((set) => ({
       users: state.users.filter((c: any) => c.id !== userId),
     }));
   },
-}));
+});
 
 const useUser = create(
   devtools(
@@ -24,5 +24,4 @@ const useUser = create(
   )
 );
 
-
-export default useUser
+export default useUser;

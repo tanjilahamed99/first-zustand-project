@@ -1,3 +1,5 @@
+"use client"
+
 const DisplayUser = () => {
   return <div></div>;
 };

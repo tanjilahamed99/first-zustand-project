@@ -1,6 +1,10 @@
 "use client";
 
+import useUser from "@/zustand/store";
+
 const CreateNewUser = () => {
+  const addUser = useUser((state: any) => state.addUser);
+
   const handleNewUser = (e: any) => {
     e.preventDefault();
     const form = e.target;
@@ -9,9 +13,12 @@ const CreateNewUser = () => {
     const company = form.company.value;
     const number = form.number.value;
 
-    const newUser = [name, company, number];
-
-    console.log(newUser);
+    addUser({
+      id: Math.ceil(Math.random() * 8734593457),
+      name: name,
+      company: company,
+      number : number
+    });
   };
 
   return (
