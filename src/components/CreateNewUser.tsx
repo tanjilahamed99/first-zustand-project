@@ -1,12 +1,22 @@
+"use client";
+
 const CreateNewUser = () => {
   const handleNewUser = (e: any) => {
     e.preventDefault();
     const form = e.target;
+
+    const name = form.name.value;
+    const company = form.company.value;
+    const number = form.number.value;
+
+    const newUser = [name, company, number];
+
+    console.log(newUser);
   };
 
   return (
     <div>
-      <form className="space-y-2">
+      <form onSubmit={handleNewUser} className="space-y-2 border-2 p-5 w-fit">
         <div>
           <h3>name</h3>
           <input
@@ -14,6 +24,7 @@ const CreateNewUser = () => {
             placeholder="name"
             name="name"
             type="text"
+            required
           />
         </div>
         <div>
@@ -23,6 +34,7 @@ const CreateNewUser = () => {
             placeholder="company"
             name="company"
             type="text"
+            required
           />
         </div>
         <div>
@@ -30,10 +42,18 @@ const CreateNewUser = () => {
           <input
             className="border-2 px-4 py-2"
             placeholder="number"
-            name="name"
+            name="number"
             type="number"
+            required
           />
         </div>
+
+        <button
+          type="submit"
+          className="bg-purple-500  w-full py-2 rounded-lg text-white"
+        >
+          Create
+        </button>
       </form>
     </div>
   );
