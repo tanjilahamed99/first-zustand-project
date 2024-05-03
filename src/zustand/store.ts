@@ -14,6 +14,14 @@ const useStore = (set: any) => ({
       users: state.users.filter((c: any) => c.id !== userId),
     }));
   },
+
+  updateUser: (userId: any) => {
+    set((state: any) => ({
+      users: state.users.map((user: any) =>
+        user.id === userId ? { ...user, jobs: !user.jobs } : user
+      ),
+    }));
+  },
 });
 
 const useUser = create(

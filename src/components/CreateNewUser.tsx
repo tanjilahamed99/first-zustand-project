@@ -12,12 +12,14 @@ const CreateNewUser = () => {
     const name = form.name.value;
     const company = form.company.value;
     const number = form.number.value;
+    const jobs = false;
 
     addUser({
       id: Math.ceil(Math.random() * 8734593457),
       name: name,
       company: company,
       number: number,
+      jobs,
     });
 
     form.reset();
