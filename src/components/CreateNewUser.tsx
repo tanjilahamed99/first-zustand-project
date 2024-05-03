@@ -17,8 +17,10 @@ const CreateNewUser = () => {
       id: Math.ceil(Math.random() * 8734593457),
       name: name,
       company: company,
-      number : number
+      number: number,
     });
+
+    form.reset();
   };
 
   return (
